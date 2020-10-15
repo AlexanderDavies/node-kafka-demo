@@ -1,6 +1,7 @@
-# Default Typescript Api Template
+# NODE KAFKA DEMO
 
 ## Summary
+Demonstrates how to publish and subscribe to kafka topics with Node.JS and kafkajs. Demonstrates how to disable auto offset commits to support error handling
 
 ## Getting Started
 
