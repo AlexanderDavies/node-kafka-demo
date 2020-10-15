@@ -67,6 +67,10 @@ components:
         message: string
         sender: string
         recipient: string
+      example:
+        message: hello, this is a test message
+        sender: Alex
+        recipient: John
     postMessageResponse:
       type: object
       properties:
