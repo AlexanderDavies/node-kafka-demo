@@ -1,0 +1,90 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "exclude": ["reports"],
+  "rules": {
+    "array-type": [true, "array"],
+    "comment-format": [true, "check-space"],
+    "curly": true,
+    "cyclomatic-complexity": [true, 20],
+    "eofline": true,
+    "indent": [true, "spaces"],
+    "interface-name": [true, "always-prefix"],
+    "label-position": true,
+    "max-classes-per-file": [false],
+    "max-file-line-count": [true, 300],
+    "max-line-length": [true, 140],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "no-empty": false,
+    "no-implicit-dependencies": false,
+    "no-inferrable-types": [true, "ignore-params"],
+    "no-mergeable-namespace": true,
+    "no-string-literal": false,
+    "no-unbound-method": false,
+    "no-unused-expression": true,
+    "no-require-imports": false,
+    "no-var-keyword": true,
+    "no-parameter-reassignment": false,
+    "only-arrow-functions": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true,
+        "import-sources-order": "case-insensitive",
+        "named-imports-order": "case-insensitive",
+        "groups": [
+          {
+            "match": "^[^~\\.]",
+            "order": 10
+          },
+          {
+            "match": "^~",
+            "order": 20
+          },
+          {
+            "match": "^[.][.]",
+            "order": 30
+          },
+          {
+            "match": "^[.]",
+            "order": 40
+          },
+          {
+            "match": null,
+            "order": 50
+          }
+        ]
+      }
+    ],
+    "prefer-function-over-method": false,
+    "prefer-switch": [
+      true,
+      {
+        "min-cases": 2
+      }
+    ],
+    "strict-boolean-expressions": false,
+    "triple-equals": true
+  }
+}

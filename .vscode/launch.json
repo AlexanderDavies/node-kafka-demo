@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug node",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "port": 9229
+        },
+        {
+            "name": "Debug jest tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+            "cwd": "${workspaceFolder}/msnap-back-end",
+            "args": ["--verbose", "-i", "--no-cache"],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+          }
+    ]
+}

@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+  description: Node kafka demo
+  version: 1.0.0
+  title: node-kafka-demo
+paths:
+  /health/ping:
+    get:
+      tags:
+        - root
+      summary: Health check route
+      description: Returns pong if the server is healthy
+      operationId: healthCheck
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/healthResponse"
+  /message:
+    post:
+      tags:
+        - root
+      summary: Message route for posting messages
+      description: post a message to a kafka topic for logging
+      operationId: postMessage
+      requestBody:
+        description: post message payload
+        content:
+          "application/json":
+            schema:
+              $ref: "#components/schemas/postMessageRequest"
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/postMessageResponse"
+servers:
+  - url: /api/v1
+components:
+  schemas:
+    healthResponse:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/responseMeta"
+        message:
+          type: string
+        data:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+            version:
+              type: string
+            uptime:
+              type: string
+    postMessageRequest:
+      type: object
+      required: true
+      properties:
+        message: string
+        sender: string
+        recipient: string
+    postMessageResponse:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/responseMeta"
+        message:
+          type: string
+    responseMeta:
+      type: object
+      properties:
+        url:
+          type: string
+        method:
+          type: string
+        timestamp:
+          type: string
+        requestId:
+          type: string
+        ip:
+          type: string
