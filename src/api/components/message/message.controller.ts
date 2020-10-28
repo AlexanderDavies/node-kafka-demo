@@ -1,9 +1,10 @@
 import { NextFunction, Request, Response } from 'express';
+import services from '../../shared/services';
 import { responder } from '../../shared/utils';
 import messageService from './message.service';
 
 /**
- * Controller to handle health check ping request
+ * Controller to handle post message route
  * @function
  * @param {Object} req - Express request object
  * @param {Object} res - Express response object
@@ -15,7 +16,6 @@ export const postMessage = async (
   next: NextFunction
 ): Promise<any> => {
   try {
-    
     const data = await messageService.sendMessage(req.body);
 
     return responder.success(
@@ -31,3 +31,4 @@ export const postMessage = async (
     next(err);
   }
 };
+
